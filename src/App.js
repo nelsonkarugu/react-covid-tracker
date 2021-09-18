@@ -62,7 +62,7 @@ const App = () => {
   }, []);
 
   console.log(casesType);
-  console.log(error);
+  
 
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
