@@ -80,7 +80,7 @@ const App = () => {
         setMapZoom(4);
       });
   };
-
+  ReactGA.pageview(window.location.pathname + window.location.search);
   return (
     <div className="app">
       <div className="app__left">
@@ -98,6 +98,7 @@ const App = () => {
               ))}
             </Select>
           </FormControl>
+          
         </div>
         <div className="app__stats">
           <InfoBox
