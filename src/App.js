@@ -66,6 +66,9 @@ const App = () => {
 
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
+    // if (countryCode === 'worldwide'){
+    //   setMapCenter({lat: 34.80746, lng: -40.4796})
+    // }
 
     const url =
       countryCode === "worldwide"
@@ -76,7 +79,16 @@ const App = () => {
       .then((data) => {
         setInputCountry(countryCode);
         setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        const lat = 
+        countryCode === "worldwide"
+        ? "34.80746"
+        : data.countryInfo.lat;
+        const long = 
+        countryCode === "worldwide"
+        ? "-40.4796"
+        : data.countryInfo.long;
+
+        setMapCenter([lat , long]);
         setMapZoom(4);
       });
   };
